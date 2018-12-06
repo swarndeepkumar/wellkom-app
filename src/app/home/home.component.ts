@@ -17,7 +17,8 @@ export class HomeComponent {
     }
 
     ngOnInit() {
-        this.userService.getById(this.currentUser.id).pipe(first()).subscribe(user => {
+        console.log('currentuser_id>>>', this.currentUser._id);
+        this.userService.getById(this.currentUser._id).pipe(first()).subscribe(user => {
             this.userFromApi = user;
         });
     }

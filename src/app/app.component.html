@@ -1,12 +1,24 @@
 ﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser; else loggedout">
     <div class="navbar-nav">
+        <a class="navbar-brand" href="#">
+            <img src="../../src/assets/images/wellkom_logo.svg" class="img-rounded" alt="WelKom Logo">
+        </a>
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
 </nav>
-
+<ng-template #loggedout>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="#">
+                <img src="../../src/assets/images/wellkom_logo.svg" class="img-rounded" alt="WelKom Logo">
+            </a>
+            
+        </div>
+    </nav>
+</ng-template>
 <!-- main app container -->
 <div class="jumbotron">
     <div class="container">
@@ -18,12 +30,6 @@
     </div>
 </div>
 
-<!-- credits -->
-<div class="text-center">
-    <p>
-        <a href="http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example" target="_top">Angular 7 - Role Based Authorization Tutorial with Example</a>
-    </p>
-    <p>
-        <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-    </p>
+<!-- Footer -->
+<div class="text-center">   
 </div>
