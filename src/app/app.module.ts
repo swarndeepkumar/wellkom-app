@@ -9,10 +9,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { HomeComponent } from './home';
-import { AdminComponent } from './admin';
-import { LoginComponent } from './login';
+import { JwtInterceptor, ErrorInterceptor } from './shared/_helpers';
+import { HomeComponent } from './modules/home';
+import { AdminComponent } from './modules/admin';
+import { LoginComponent } from './modules/user/login';
 
 @NgModule({
     imports: [

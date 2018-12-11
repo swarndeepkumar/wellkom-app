@@ -1,10 +1,10 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home';
-import { AdminComponent } from './admin';
-import { LoginComponent } from './login';
-import { AuthGuard } from './_guards';
-import { Role } from './_models';
+import { HomeComponent } from './modules/home';
+import { AdminComponent } from './modules/admin';
+import { LoginComponent } from './modules/user/login';
+import { AuthGuard } from './shared/_guards';
+import { Role } from './shared/_models';
 
 const appRoutes: Routes = [
     {
@@ -18,6 +18,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard],
         data: { roles: [Role.Admin] }
     },
+    
     {
         path: 'login',
         component: LoginComponent

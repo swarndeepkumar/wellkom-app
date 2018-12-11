@@ -2,10 +2,16 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser; else loggedout">
     <div class="navbar-nav">
         <a class="navbar-brand" href="#">
-            <img src="../../src/assets/images/wellkom_logo.svg" class="img-rounded" alt="WelKom Logo">
+            <img src="../../src/app/assets/images/wellkom_logo.svg" class="img-rounded" alt="WelKom Logo">
         </a>
         <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/dashboard">Dashboard</a>
+        <a class="nav-item nav-link" routerLink="/scoreDetail">Score Detail</a>
+        <a class="nav-item nav-link" routerLink="/goalSetup">Goal Setup</a>
+        <a class="nav-item nav-link" routerLink="/wellnessQuestion">Wellness Question</a>
+        <a class="nav-item nav-link" routerLink="/report" *ngIf="isAdmin">Report</a>
         <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+        <a class="nav-item nav-link" routerLink="/editProfile">Edit Profile</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
 </nav>

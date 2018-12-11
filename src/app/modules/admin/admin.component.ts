@@ -1,8 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { User } from '@/_models';
-import { UserService } from '@/_services';
+import { User } from '@/shared/_models';
+import { UserService } from '@/shared/_services';
 
 @Component({ templateUrl: 'admin.component.html' })
 export class AdminComponent implements OnInit {
