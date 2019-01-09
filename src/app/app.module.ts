@@ -10,22 +10,31 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
 import { JwtInterceptor, ErrorInterceptor } from './shared/_helpers';
+import { MessagesComponent } from './shared/messages/messages.component';
 import { HomeComponent } from './modules/home';
 import { AdminComponent } from './modules/admin';
 import { LoginComponent } from './modules/user/login';
+import { RegisterComponent } from './modules/user/register';
+
+/* Feature Modules */
+import { UsersModule } from './modules/users/users.module';
+//import { MessageModule } from './messages/message.module';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        routing
+        routing,
+        UsersModule
     ],
     declarations: [
         AppComponent,
+        MessagesComponent,
         HomeComponent,
         AdminComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

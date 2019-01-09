@@ -49,4 +49,25 @@ export class AuthenticationService {
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
+
+    register( firstname: string, lastname: string,
+    email: string,password: string, role: string){
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>called login api ..');
+
+        return this.http.post<any>(`${config.apiUrl}/users/register`, 
+        {
+            "user": {
+                "email": email,
+                "firstName": firstname,
+                "lastName": lastname,
+                "password": password,
+                "role": role
+            }
+        }).pipe(map( user => {
+            if(user){
+                return user;
+            }
+        }));
+      
+    }
 }
