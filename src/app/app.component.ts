@@ -7,7 +7,7 @@ import { User, Role } from './shared/_models';
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
     currentUser: User;
-
+    
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService

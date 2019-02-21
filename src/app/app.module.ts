@@ -18,6 +18,7 @@ import { RegisterComponent } from './modules/user/register';
 
 /* Feature Modules */
 import { UsersModule } from './modules/users/users.module';
+import { QuestionsModule } from './modules/questions/questions.module';
 //import { MessageModule } from './messages/message.module';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UsersModule } from './modules/users/users.module';
         ReactiveFormsModule,
         HttpClientModule,
         routing,
-        UsersModule
+        UsersModule,
+        QuestionsModule
     ],
     declarations: [
         AppComponent,

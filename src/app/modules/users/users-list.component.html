@@ -1,0 +1,88 @@
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            user List
+        </div>
+    
+        <!-- Filter the Products   -->
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">Filter by:</div>
+                <div class="col-md-4">
+                    <!-- <input type="text" [(ngModel)]="listFilter" /> -->
+                </div>
+            </div>
+            <!-- <div class="row" *ngIf="listFilter"> -->
+                <div class="row">
+                <div class="col-md-6">
+                    <!-- <h3>Filtered by: {{listFilter}} </h3> --> Filter By
+                </div>
+            </div>
+    
+            <!-- <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+     -->
+
+    
+            <div class="table-responsive">
+                <table class="table"
+                       *ngIf="users && users.length">
+                      
+                  
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-primary"
+                                    (click)="toggleImage()">
+                                    {{showImage ? "Hide" : "Show"}} Image
+                                </button>
+                            </th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                                <!-- <tr *ngFor="let user of users | productFilter:listFilter"> -->
+                            <td>  image
+                                <!-- <img *ngIf="showImage && product.imageUrl"
+                                     [src]="product.imageUrl"
+                                     [title]="product.productName | uppercase"
+                                     [style.width.px]="imageWidth" 
+                                     [style.margin.px]="imageMargin"> -->
+                            </td>
+                            <td>
+                                <a [routerLink]="[user._id]" 
+                                   [queryParams]="{filterBy: listFilter, showImage: showImage}">
+                                {{user.firstName}}
+                                </a>
+                                
+                            </td>
+                            <td>
+                                {{ user.lastName | lowercase }}
+                               
+                            </td>
+                            <td>
+                                    {{ user.email | lowercase }}
+                              
+                            </td>
+                            <td>
+                                <!-- {{ product.price | currency:"USD":true:"1.2-2" }} -->
+                                {{ user.role  }}
+                            </td>
+                            
+                           <td>
+                                <a class="btn btn-primary" 
+                                   [routerLink]="[user._id, 'edit']">
+                                    Edit
+                                </a>
+                               
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
